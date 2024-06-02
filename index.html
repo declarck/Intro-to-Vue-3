@@ -1,46 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Vue Mastery</title>
-    <!-- Import Styles -->
-    <link rel="stylesheet" href="./assets/styles.css" />
-    <!-- Import Vue.js -->
-    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
-  </head>
-  <body>
-    <div id="app">
-      <div class="nav-bar"></div>
-      
-      <div class="product-display">
-        <div class="product-container">
-          <div class="product-image">
-            <img v-bind:src="image">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Vue Mastery</title>
+  <!-- Import Styles -->
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <!-- Import Vue.js -->
+  <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="nav-bar"></div>
+
+    <div class="product-display">
+      <div class="product-container">
+        <div class="product-image">
+          <img v-bind:src="image">
+        </div>
+        <div class="product-info">
+          <h1>{{ product }}</h1>
+
+          <p v-if="inStock">In Stock</p>
+          <p v-else>Out of Stock</p>
+
+          <div>
+            <h3>Details</h1>
+              <ul>
+                <li v-for="i in details">{{ i }}</li>
+              </ul>
           </div>
-          <div class="product-info">
-            <h1>{{ product }}</h1>
-            <p v-if="inStock">In Stock</p>
-            <p v-else>Out of Stock</p>
-            <ul>
-              <li v-for="detail in details">{{ detail }}</li>
-            </ul>
-            <!-- solution -->
-            <ul>
-              <li v-for="(size, index) in sizes" :key="index">{{ size }}</li>
-            </ul>
-            <!-- solution -->
-            <div v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
+
+          <div>
+            <h3>Variants</h1>
+              <!-- <div v-for="i in variants" :key="i.id">{{i.color}}</div> -->
+              <li v-for="i in variants" :key="i.id">{{ i.color }}</li>
           </div>
+
+          <div>
+            <h3>Sizes</h1>
+              <!-- <span v-for="i in sizes">[{{i}}]</span> -->
+              <li v-for="i in sizes">{{ i }}</li>
+
+              <ul>
+                <li v-for="(size, index) in sizes" :key="index">{{ size }}</li>
+              </ul>
+          </div>
+
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Import App -->
-    <script src="./main.js"></script>
+  <!-- Import App -->
+  <script src="./main.js"></script>
 
-    <!-- Mount App -->
-    <script>
-      const mountedApp = app.mount('#app')
-    </script>
-  </body>
+  <!-- Mount App -->
+  <script>
+    const mountedApp = app.mount('#app')
+  </script>
+</body>
+
 </html>
