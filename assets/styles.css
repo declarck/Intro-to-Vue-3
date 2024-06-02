@@ -21,6 +21,39 @@ body {
   cursor: pointer;
 }
 
+.buttonDec {
+  margin: 5px;
+  background-color: #39495c;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 120px;
+  height: 40px;
+  color: white;
+  padding: 5px;
+  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+  text-align: center;
+  cursor: pointer;
+}
+
+.buttonVariant {
+  margin: 5px;
+  border-radius: 5px;
+  /* border: none; */
+  font-size: 14px;
+  width: 100px;
+  height: 40px;
+  color: white;
+  padding: 10px;
+  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+  text-align: center;
+  cursor: default;
+}
+
+
 .cart {
   margin: 25px 100px;
   float: right;
